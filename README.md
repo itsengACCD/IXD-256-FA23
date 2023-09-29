@@ -1,5 +1,5 @@
 # IXD-256-Isaac
 
-Welcome to my personal class space!
+Hey dumb dumb welcome to your personal class space!
 
 Remember to commit and push new files.
