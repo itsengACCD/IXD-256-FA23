@@ -1,3 +1,3 @@
-# Assignment #1
+# IXD-256-Isaac
 
-Digital input project
+Welcome to my personal class space!
