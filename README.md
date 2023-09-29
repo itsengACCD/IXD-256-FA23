@@ -1,1 +1,3 @@
-# IXD-256-Isaac
+# Assignment #1
+
+Digital input project
