@@ -5,7 +5,7 @@ from hardware import *
 import time
 
 rgb = None
-state = 'green'
+state = 'yellow'
 input_pin = None
 
 def setup():
@@ -25,31 +25,29 @@ def get_color(r, g, b):
 def loop():
   global rgb, state
   M5.update()
-  if(state == 'green'):
+  if(state == 'yellow'):
     # if button is pressed change to red state:
-    #if BtnA.isPressed():
     if (input_pin.value() == 0):
       state = 'red'
       print('change to ', state)
       time.sleep(1)
     else:
-      # fade in all RGB LEDs green
-      for i in range (100):
-        rgb.fill_color(get_color(0, i, 0))
-        time.sleep_ms(20)
-  elif(state == 'red'):
-    # if button is pressed change to green state:
-    #if BtnA.isPressed():
-    if (input_pin.value() == 0):
-      state = 'green'
-      print('change to ', state)
-      time.sleep(1)
-    else:
-      # chase RGB blue
       for i in range (10):
         rgb.set_color(i, get_color(0, 0, 255))
         time.sleep_ms(100)
       rgb.fill_color(0xff0000)
+      time.sleep_ms(500)
+  elif(state == 'red'):
+    # if button is pressed change to yellow state:
+    if (input_pin.value() == 0):
+      state = 'yellow'
+      print('change to ', state)
+      time.sleep(1)
+    else:
+      # chase RGB green
+      rgb.fill_color(0xffcc00)
+      time.sleep_ms(500)
+      rgb.fill_color(0x000000)
       time.sleep_ms(500)
 
 if __name__ == '__main__':
