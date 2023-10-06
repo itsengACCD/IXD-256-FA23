@@ -2,7 +2,7 @@
 
 Digital input project: [link to this README file](./README.md)
 
-Skill-based toy car game involving a lego car, straight road piece, and traffic light (RBG)
+Skill-based toy car game involving a lego car, straight road piece, and traffic light (RGB LED light)
 
 ## Game Rules
 
