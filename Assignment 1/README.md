@@ -19,4 +19,4 @@ Flow chart version 1:
 
 Sketch for the game idea:
 
-![sketch number 1](./Sketch_1.jpg)
+![car idea sketch](./Sketch_2.jpg)
