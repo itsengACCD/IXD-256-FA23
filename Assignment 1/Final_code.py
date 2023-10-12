@@ -1,8 +1,8 @@
 # change RGB LED colors with digital input and time using state logic
 # 4 states are implemented as shown:
 # 'START'  -> turns on RGB green
-# 'OPEN'   -> pulsate RGB yellow
-# 'CLOSED' -> fade in RGB red if digital input is closed
+# 'OPEN'   -> pulsate RGB red
+# 'CLOSED' -> fade in RGB blue if digital input is closed
 # 'FINISH' -> fade in RGB green 4 seconds after 'CLOSED' state
 #             fade out RGB to black after 1 seconds
 
@@ -38,42 +38,51 @@ def loop():
   M5.update()
       
   if (state == 'OPEN'):
-    print('pulsate yellow..')
-    # fade in RGB yellow:
+    print('pulsate red..')
+    # fade in RGB red:
     for i in range(100):
-      rgb.fill_color(get_color(0, 0, i))
-      time.sleep_ms(20)
-    # fade out RGB blue:
+      rgb.fill_color(get_color(i, 0, 0))
+      time.sleep_ms(5)
+    # fade out RGB red:
     for i in range(100):
-      rgb.fill_color(get_color(0, 0, 100-i))
-      time.sleep_ms(20)
+      rgb.fill_color(get_color(100-i, 0, 0))
+      time.sleep_ms(5)
     check_input()
     
   elif (state == 'CLOSED'):
     # if less than 1 seconds passed since change to 'CLOSED':
-    if(time.ticks_ms() < state_timer + 1000):
-      print('fade in yellow..')
-      for i in range(100):
-        rgb.fill_color(get_color(i, i, 0))
-        time.sleep_ms(20)
-    # if more than 5 seconds passed since change to 'CLOSED':
-    elif(time.ticks_ms() > state_timer + 5000):
+    if(time.ticks_ms() < state_timer + 900):
+      print('blink blue..')
+      rgb.fill_color(get_color(0, 0, 255))
+      time.sleep_ms(150)
+      rgb.fill_color(get_color(0, 0, 0))
+      time.sleep_ms(150)
+      rgb.fill_color(get_color(0, 0, 255))
+      time.sleep_ms(150)
+      rgb.fill_color(get_color(0, 0, 0))
+      time.sleep_ms(150)
+      rgb.fill_color(get_color(0, 0, 255))
+      time.sleep_ms(150)
+      rgb.fill_color(get_color(0, 0, 0))
+      time.sleep_ms(150)
+    # if more than 1 seconds passed since change to 'CLOSED':
+    elif(time.ticks_ms() > state_timer + 1000):
       state = 'FINISH'
       print('change to', state)
       # save current time in milliseconds:
       state_timer = time.ticks_ms()
       
   elif (state == 'FINISH'):
-    print('fade from yellow to red..')
+    print('fade from blue to green..')
     for i in range(100):
-      rgb.fill_color(get_color(100, 100-i, 0))
+      rgb.fill_color(get_color(0, i, 100-i))
       time.sleep_ms(20)
       
     # if 2 seconds passed since change to 'FINISH':
     if(time.ticks_ms() > state_timer + 2000):
       print('fade from red to black..') 
       for i in range(100):
-        rgb.fill_color(get_color(100-i, 0, 0))
+        rgb.fill_color(get_color(0, 100-i, 0))
         time.sleep_ms(20)
       time.sleep(1)
       check_input()
