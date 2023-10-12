@@ -15,7 +15,7 @@ Skill-based toy car game involving a lego car, straight road piece, and traffic 
 
 Prototype Video:
 
-![prototype video](./ShortVideo.mov)
+![prototype video](./ShortVideo.gif)
 
 Flow chart:
 
