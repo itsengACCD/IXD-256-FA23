@@ -17,9 +17,19 @@ Prototype Video:
 
 ![prototype video](./ShortVideo.gif)
 
+
+Prototype Photos:
+
+![final photo 1](./FinalPhoto_1.jpg)
+![final photo 2](./FinalPhoto_2.jpg)
+![final photo 3](./FinalPhoto_3.jpg)
+![final photo 4](./FinalPhoto_4.jpg)
+
+
 Flow chart:
 
 ![flow chart](./Flowchart.jpg)
+
 
 Sketch for the game idea:
 
