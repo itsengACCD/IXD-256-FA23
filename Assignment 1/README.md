@@ -13,7 +13,11 @@ Skill-based toy car game involving a lego car, straight road piece, and traffic 
 
 ## Design Process
 
-Flow chart version 1:
+Prototype Video:
+
+![prototype video](./ShortVideo.mov)
+
+Flow chart:
 
 ![flow chart](./Flowchart.jpg)
 
