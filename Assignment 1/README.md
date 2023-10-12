@@ -6,10 +6,11 @@ Skill-based toy car game involving a lego car, straight road piece, and traffic 
 
 ## Game Rules
 
-* Player brings car to the beginning of the straight road piece
-* Player pushes car with a certain force in the attempt for the car to stop just at the finish line contact patch
-* If car stops right on the contact patch, LED will turn solid red signifying success, then it will blink green signifying completion.
-* If car misses the contact patch, LED will blink yellow.
+* Player brings car to the beginning of the straight road piece.
+* The road piece upon startup will be solid green, then transition to a pulsing red light.
+* Player pushes car with a certain force in the attempt for the car to stop just at the finish line contact patch.
+* If car stops right on the contact patch, LED will blink rapidly blue signifying success, then it will turn green and fade to black, signifying completion.
+* If car misses the contact patch, LED will continue to pulse red.
 
 ## Design Process
 
