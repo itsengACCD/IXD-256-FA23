@@ -28,8 +28,8 @@ def loop():
                            out_min = 0, out_max = 255)
   print(adc_val_8bit)
   # change red color brightness according to analog input:
-  red_brightness = adc_val_8bit
-  rgb.fill_color(get_color(red_brightness, 0, 0))
+  blue_brightness = adc_val_8bit
+  rgb.fill_color(get_color(0, 0, blue_brightness))
   time.sleep_ms(100)
   
 # convert separate r, g, b values to one rgb_color value:  
