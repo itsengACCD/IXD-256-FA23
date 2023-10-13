@@ -1,10 +1,12 @@
 import os, sys, io
 import M5
 from M5 import *
+from hardware import *
 import time
 from unit import *
 
 
+adc1 = None
 angle_0 = None
 
 
@@ -12,18 +14,18 @@ angle_val = None
 
 
 def setup():
-  global angle_0, angle_val
+  global adc1, angle_0, angle_val
 
-  angle_0 = Angle((1,2))
+  adc1 = ADC(Pin(1), atten=ADC.ATTN_11DB)
   M5.begin()
 
 
 def loop():
-  global angle_0, angle_val
+  global adc1, angle_0, angle_val
   M5.update()
-  angle_val = angle_0.get_value()
+  angle_val = adc1.read()
   print(angle_val)
-  time.sleep_ms(500)
+  time.sleep_ms(400)
 
 
 if __name__ == '__main__':
