@@ -2,7 +2,7 @@
 # 4 states are implemented as shown:
 # 'START'  -> turns on RGB green
 # 'OPEN'   -> pulsate RGB red
-# 'CLOSED' -> fade in RGB blue if digital input is closed
+# 'CLOSED' -> blink RGB blue if digital input is closed
 # 'FINISH' -> fade in RGB green 4 seconds after 'CLOSED' state
 #             fade out RGB to black after 1 seconds
 
