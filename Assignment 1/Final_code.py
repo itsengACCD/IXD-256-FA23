@@ -80,7 +80,7 @@ def loop():
       
     # if 2 seconds passed since change to 'FINISH':
     if(time.ticks_ms() > state_timer + 2000):
-      print('fade from red to black..') 
+      print('fade from green to black..') 
       for i in range(100):
         rgb.fill_color(get_color(0, 100-i, 0))
         time.sleep_ms(20)
