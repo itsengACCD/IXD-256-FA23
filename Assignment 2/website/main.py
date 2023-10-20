@@ -13,6 +13,7 @@ def draw():
   global data
   data = document.getElementById("data").innerText
   
+  p5.text(int(data), 10, 20)
   circle_size = int(data)
   p5.noStroke()
   p5.fill(150)
