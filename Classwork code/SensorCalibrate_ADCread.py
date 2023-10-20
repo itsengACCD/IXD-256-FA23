@@ -17,21 +17,17 @@ def setup():
   # configure ADC input on pin G1 with 11dB attenuation:
   adc = ADC(Pin(1), atten=ADC.ATTN_11DB)
   time.sleep_ms(500)
-  #set calibration value to be 100 less than adc_val
-  adc_calibration_val = adc.read() - 100
-  print('save calibration value..', adc_calibration_val)
+  set_calibration()
 
 def loop():
   global adc, adc_val, adc_calibration_val, adc_timer
   M5.update()
   # calibrate the sensor when built-in button is pressed:
   if BtnA.wasPressed():
-    #set calibration value to be 100 less than adc_val
-    adc_calibration_val = adc.read() - 100
-    print('save calibration value..', adc_calibration_val)
+    set_calibration()
   
   # condition to read adc evey 500ms:
-  if(time.ticks_ms() > adc_timer + 500):
+  if(time.ticks_ms() > adc_timer + 200):
     # read 12-bit analog value (0 - 4095 range):
     adc_val = adc.read()
     # print(adc_val)
@@ -46,6 +42,13 @@ def loop():
       print('sensor low..')
     else:
       print('sensor high..')
+
+
+def set_calibration():
+  global adc_calibration_val
+  #set calibration value to be 100 less than adc_val
+  adc_calibration_val = adc.read() - 100
+  print('set calibration value..', adc_calibration_val)
 
 
 # map an input value (v_in) between min/max ranges:
