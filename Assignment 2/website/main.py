@@ -26,6 +26,8 @@ def draw():
   p5.rotate(p5.radians(angle))
   # change mode to draw rectangle from center:
   p5.rectMode(p5.CENTER)
+  # fill with blue color
+  p5.fill(0, 0, 255)
   # draw rectangle at coordinate 0, 0 and 100 width and height:
   p5.rect(0, 0, 100, 100)
   # restore graphical transformation:
