@@ -31,13 +31,11 @@ def draw():
   # p5.fill(0, 0, 255)
   # fill with gray responding to data:
   p5.fill(int(data))
-  # draw rectangle at coordinate 0, 0 and 100 width and height:
-  p5.rect(0, 0, 100, 100)
+  # draw rectangle at coordinate 0, 0 and 100 width and height and 20 radius:
+  p5.rect(0, 0, 100, 100, 20)
   # restore graphical transformation:
   p5.pop()
   
 
 def print_test(x):
   print(x)
-
-  
