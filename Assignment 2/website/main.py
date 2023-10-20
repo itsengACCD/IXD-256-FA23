@@ -5,7 +5,7 @@ data = None
 
 def setup():
   p5.createCanvas(500, 500)
-  print('hello p5!')
+  print('update')
 
 def draw():
   p5.background(255)
