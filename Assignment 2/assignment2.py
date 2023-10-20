@@ -1,3 +1,6 @@
+# use analog-to-digital converter (ADC) to read analog input on pin G1,
+# convert the value to 8 bits (0 - 255 range) and print it
+
 import os, sys, io
 import M5
 from M5 import *
@@ -18,12 +21,14 @@ def loop():
   M5.update()
   # read 12-bit analog value (0 - 4095 range):
   adc_val = adc.read()
-  # print(adc_val)
-  # convert adc_val from 0-4095 range to 
+  #print(adc_val)
+  # convert adc_val from 12-bit to 8-bit (0 - 255 range):
   adc_val_8bit = map_value(adc_val, in_min = 0, in_max = 4095,
                            out_min = 0, out_max = 255)
-  print(adc_val_8bit)
-  print(int(BtnA,isPressed()))
+  # print 8-bit ADC value ending with comma:
+  print(adc_val_8bit, end=',')
+  # print built-in button value converted to integer:
+  print(int(BtnA.isPressed()))
   time.sleep_ms(100)
   
 # map an input value (v_in) between min/max ranges:
@@ -46,4 +51,3 @@ if __name__ == '__main__':
       print_error_msg(e)
     except ImportError:
       print("please update to latest firmware")
-
