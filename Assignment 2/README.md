@@ -3,7 +3,7 @@
 Linking analog inputs on hardware to outputs on screen through computer software
 
 Link:
-[Website](Assignment 2/website/) - Serial communication with PyScript and P5 graphics library 
+[Website](/website/) - Serial communication with PyScript and P5 graphics library 
 
 ## Design Process
 
