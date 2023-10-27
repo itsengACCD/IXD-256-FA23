@@ -8,26 +8,26 @@ from M5 import *
 from hardware import *
 import time
 
-adc = None
-adc_val = None
+angle_adc = None
+angle_val = None
 
 def setup():
-  global adc, adc_val
+  global angle_adc, angle_val
   M5.begin()
   # configure ADC input on pin G1 with 11dB attenuation:
-  adc = ADC(Pin(1), atten=ADC.ATTN_11DB)
+  angle_adc = ADC(Pin(1), atten=ADC.ATTN_11DB)
 
 def loop():
-  global adc, adc_val
+  global angle_adc, angle_val
   M5.update()
   # read 12-bit analog value (0 - 4095 range):
-  adc_val = adc.read()
+  angle_val = angle_adc.read()
   #print(adc_val)
   # convert adc_val from 12-bit to 8-bit (0 - 255 range):
-  adc_val_8bit = map_value(adc_val, in_min = 0, in_max = 4095,
+  angle_val_8bit = map_value(angle_val, in_min = 0, in_max = 4095,
                            out_min = 0, out_max = 255)
   # print 8-bit ADC value ending with comma:
-  print(adc_val_8bit, end=',')
+  print(angle_val_8bit, end=',')
   # print built-in button value converted to integer:
   print(int(BtnA.isPressed()))
   time.sleep_ms(100)
