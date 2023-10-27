@@ -10,7 +10,7 @@ Linking analog inputs on hardware to outputs on screen through computer software
 
 Prototype Video:
 
-![prototype video](./assignment2video.gif)
+![prototype video](./assignment2_video.gif)
 
 
 Sketches:
