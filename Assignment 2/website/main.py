@@ -8,6 +8,7 @@ button_val = None
 
 # load image data and assign it to variable:
 valley_img = p5.loadImage('valley.png')
+cloud_img = p5.loadImage('cloud.png')
 
 def setup():
   p5.createCanvas(800, 400)
@@ -34,11 +35,11 @@ def draw():
   # change fill color with button value:
   if(button_val == 0):
     p5.fill(255, 200, 0)  # yellow fill
-    p5.background(sensor_val-55, sensor_val-55, sensor_val+100)
+    p5.background(sensor_val-100, sensor_val-55, sensor_val+100)
 
   else:
-    p5.fill(255, 255, 255)  # white fill
-    p5.background(100-sensor_val, 100-sensor_val, 200-sensor_val)
+    p5.fill(255, 255, 200)  # pale yellow fill
+    p5.background(0-sensor_val, 0-sensor_val, 100-sensor_val)
 
   # change sun height with sensor value:
   p5.ellipse(400, 355-sensor_val, 100, 100)
