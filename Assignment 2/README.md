@@ -8,6 +8,11 @@ Linking analog inputs on hardware to outputs on screen through computer software
 
 ## Design Process
 
+Prototype Video:
+
+![prototype video](./assignment2video.gif)
+
+
 Sketches:
 
 Idea A
