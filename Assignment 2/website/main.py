@@ -4,6 +4,7 @@ from js import document
 data_string = None
 data_list = None
 angle_val = None
+light_val = None
 button_val = None
 
 # load image data and assign it to variable:
@@ -15,7 +16,7 @@ def setup():
 
 def draw():
   global data_string, data_list
-  global angle_val, button_val
+  global angle_val, button_val, light_val
 
   # assign content of "data" div on index.html page to variable:
   data_string = document.getElementById("data").innerText
@@ -23,12 +24,14 @@ def draw():
   data_list = data_string.split(',')
 
   angle_val = int(data_list[0])
-  button_val = int(data_list[1])
+  light_val = int(data_list[1])
+  button_val = int(data_list[2])
 
   p5.fill(0)
   p5.noStroke()
   p5.text('sensor_val = ' + str(angle_val), 10, 20)
-  p5.text('button_val = ' + str(button_val), 10, 35)
+  p5.text('light_val = ' + str(light_val), 10, 35)
+  p5.text('button_val = ' + str(button_val), 10, 50)
 
   # change fill color with button value:
   if(button_val == 0):
