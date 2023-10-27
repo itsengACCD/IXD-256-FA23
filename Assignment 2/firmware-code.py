@@ -30,7 +30,7 @@ def loop():
   # convert adc_val from 12-bit to 8-bit (0 - 255 range):
   angle_val_8bit = map_value(angle_val, in_min = 0, in_max = 4095,
                            out_min = 0, out_max = 255)
-  light_val_8bit = map_value(light_val, in_min = 0, in_max = 4095,
+  light_val_8bit = map_value(light_val, in_min = 1000, in_max = 4095,
                            out_min = 0, out_max = 255)
   # print 8-bit ADC value ending with comma:
   print(angle_val_8bit, end=',')

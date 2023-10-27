@@ -22,7 +22,7 @@ def draw():
   data_string = document.getElementById("data").innerText
   # split data_string by comma, making a list:
   data_list = data_string.split(',')
-
+  # make sure to change initial string in html file to reflect list:
   angle_val = int(data_list[0])
   light_val = int(data_list[1])
   button_val = int(data_list[2])
@@ -39,10 +39,14 @@ def draw():
     p5.background(angle_val-100, angle_val-55, angle_val+100)
 
   else:
-    p5.fill(255, 255, 200)  # pale yellow fill
+    p5.fill(255, 255, 180)  # pale yellow fill
     p5.background(0-angle_val, 0-angle_val, 100-angle_val)
 
   # change sun height with sensor value:
-  p5.ellipse(400, 355-angle_val, 100, 100)
-  p5.image(valley_img, 0, 0, 800, 400)
+  p5.ellipse(400, 355-angle_val, 150, 150)
+  # control opacity on cloud_img with tint:
+  p5.tint(255, 255, 255, light_val)
   p5.image(cloud_img, 0, 0, 800, 400)
+  # disable tint on valley_img:
+  p5.noTint()
+  p5.image(valley_img, 0, 0, 800, 400)
