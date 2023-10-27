@@ -44,3 +44,4 @@ def draw():
   # change sun height with sensor value:
   p5.ellipse(400, 355-sensor_val, 100, 100)
   p5.image(valley_img, 0, 0, 800, 400)
+  p5.image(cloud_img, 0, 0, 800, 400)
