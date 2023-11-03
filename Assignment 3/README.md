@@ -7,3 +7,7 @@ Rube Goldberg Machine Component
 Sketch:
 
 ![Sketch](./Sketch.jpg)
+
+Sketch:
+
+![State Diagram](./State_diagram.jpg)
