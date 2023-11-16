@@ -25,7 +25,7 @@ def loop():
   #print(adc_val)
   # convert adc_val from 12-bit to 8-bit (0 - 255 range):
   servo_val = map_value(adc_val, in_min = 0, in_max = 4095,
-                           out_min = 90, out_max = 150)
+                           out_min = 90, out_max = 100)
   # print 8-bit ADC value ending with comma:
   print(servo_val)
   servo.move(servo_val)
