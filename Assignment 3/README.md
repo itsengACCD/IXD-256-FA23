@@ -7,6 +7,7 @@ Rube Goldberg Machine Component
 Prototype Gif:
 
 ![Prototype](./video.gif)
+![Prototype](./video2.gif)
 
 Sketch:
 
