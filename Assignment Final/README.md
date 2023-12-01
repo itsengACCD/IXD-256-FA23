@@ -9,7 +9,3 @@ Sketch:
 ![sketch1](./sketch1.jpg)
 ![sketch2](./sketch2.jpg)
 ![sketch3](./sketch3.jpg)
-
-State Diagram:
-
-![State Diagram](./State_diagram.jpg)
