@@ -1,18 +1,11 @@
-# Assignment #3
+# Final Project
 
-Rube Goldberg Machine Component
+Hot Wheels Speed Trap
 
 ## Design Process
 
-Prototype Gif:
-
-![Prototype](./video.gif)
-![Prototype](./video2.gif)
-
 Sketch:
 
-![Sketch](./Sketch.jpg)
-
-State Diagram:
-
-![State Diagram](./State_diagram.jpg)
+![sketch1](./sketch1.jpg)
+![sketch2](./sketch2.jpg)
+![sketch3](./sketch3.jpg)
