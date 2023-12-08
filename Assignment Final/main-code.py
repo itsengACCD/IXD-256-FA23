@@ -34,7 +34,7 @@ def setup():
       'io.adafruit.com', 
       port=1883, 
       user=user_name, 
-      password='aio_YGcF030Mroin3OUAw7HMkTecxVnK', 
+      password='aio_ajSj2884xrsXaqT0Eybxtgg3Z5ca', 
   )
   mqtt_client.connect(clean_session=True)
   # configure ADC input on pin G1 with 11dB attenuation:
