@@ -7,7 +7,7 @@ import time
 from umqtt import *
 
 mqtt_client = None
-user_name = 'itAP12'
+user_name = 'USERNAME_HERE'
 
 adc_sensor1 = None
 adc_sensor1_val = None
@@ -34,7 +34,7 @@ def setup():
       'io.adafruit.com', 
       port=1883, 
       user=user_name, 
-      password='aio_ajSj2884xrsXaqT0Eybxtgg3Z5ca', 
+      password='PASSWORD_HERE', 
   )
   mqtt_client.connect(clean_session=True)
   # configure ADC input on pin G1 with 11dB attenuation:
