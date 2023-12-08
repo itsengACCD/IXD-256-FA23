@@ -21,7 +21,8 @@ sensor3_time = 0
 program_state = 'READY'
 
 def setup():
-  global adc_sensor1, adc_sensor1_val, adc_sensor2, adc_sensor2_val, adc_sensor3, adc_sensor3_val
+  global adc_sensor1, adc_sensor1_val, adc_sensor2, adc_sensor2_val
+  global adc_sensor3, adc_sensor3_val
   M5.begin()
   # configure ADC input on pin G1 with 11dB attenuation:
   adc_sensor1 = ADC(Pin(1), atten=ADC.ATTN_11DB)
@@ -37,6 +38,7 @@ def loop():
   global program_state
   
   M5.update()
+  
   # read adc and update servo every 2 seconds:
   if(time.ticks_ms() > adc_timer + 2000):
     # read 12-bit analog value (0 - 4095 range):
@@ -73,8 +75,10 @@ def loop():
       print('duration =', duration)
       program_state = 'SENSOR3'
       print('change program_state to', program_state)
-      print('speed =', 279.4/duration, 'meters per second')
-  
+      speed = ("{:.2f}".format(279.4/duration))
+      print('Captured speed =', speed, 'meters per second')
+      program_state = 'READY'
+
 
 def map_value(in_val, in_min, in_max, out_min, out_max):
   v = out_min + (in_val - in_min) * (out_max - out_min) / (in_max - in_min)
