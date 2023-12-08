@@ -4,6 +4,10 @@ from M5 import *
 from hardware import *
 from servo import Servo
 import time
+from umqtt import *
+
+mqtt_client = None
+user_name = 'itAP12'
 
 adc_sensor1 = None
 adc_sensor1_val = None
@@ -23,19 +27,32 @@ program_state = 'READY'
 def setup():
   global adc_sensor1, adc_sensor1_val, adc_sensor2, adc_sensor2_val
   global adc_sensor3, adc_sensor3_val
+  global mqtt_client
   M5.begin()
+  mqtt_client = MQTTClient(
+      'my_atom_board', 
+      'io.adafruit.com', 
+      port=1883, 
+      user=user_name, 
+      password='aio_YGcF030Mroin3OUAw7HMkTecxVnK', 
+  )
+  mqtt_client.connect(clean_session=True)
   # configure ADC input on pin G1 with 11dB attenuation:
   adc_sensor1 = ADC(Pin(1), atten=ADC.ATTN_11DB)
   # configure ADC input on pin G8 with 11dB attenuation:
   adc_sensor2 = ADC(Pin(8), atten=ADC.ATTN_11DB)
   # configure ADC input on pin G6 with 11dB attenuation:
   adc_sensor3 = ADC(Pin(6), atten=ADC.ATTN_11DB)
+  
+  #print('test publish speed..')
+  #mqtt_client.publish(user_name+'/feeds/toy-car-feed', str(2.2), qos=0)
 
 def loop():
   global adc_sensor1, adc_sensor1_val, adc_sensor2, adc_sensor2_val
   global adc_sensor3, adc_sensor3_val, adc_timer
   global sensor2_time, sensor3_time
   global program_state
+  global mqtt_client
   
   M5.update()
   
@@ -78,6 +95,10 @@ def loop():
       speed = ("{:.2f}".format(279.4/duration))
       print('Captured speed =', speed, 'meters per second')
       program_state = 'READY'
+      
+      # publish analog value as a string:
+      mqtt_client.publish(user_name+'/feeds/toy-car-feed', str(speed), qos=0)
+      print('publish speed..', str(speed))
 
 
 def map_value(in_val, in_min, in_max, out_min, out_max):
