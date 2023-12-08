@@ -25,7 +25,7 @@ def setup():
   )
   mqtt_client.connect(clean_session=True)
   # configure ADC input on pin G8 with 11dB attenuation:
-  adc = ADC(Pin(1), atten=ADC.ATTN_11DB)
+  adc = ADC(Pin(39), atten=ADC.ATTN_11DB)
 
 
 def loop():
