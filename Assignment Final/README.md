@@ -179,7 +179,7 @@ For my final project implementation I was able to create a working prototype dev
 
 ![ProjectPhoto2](./Photos/Final2.jpg)
 
-![ProjectVideo](./Final_Video_compressed.mp4)
+![ProjectVideoGif](./Final_Video.gif)
 
 
 # Conclusion  
