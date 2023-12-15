@@ -175,9 +175,9 @@ Here is the link to and screenshot of the dashboard: [Adafruit Toy Car Speed Das
 
 For my final project implementation I was able to create a working prototype device that measures the speed of diecast Hot Wheels passing through the section of track. The recorded speed was able to be sent over the cloud and displayed on a separate screen to be viewed. The turntable also lines up and releases each car at the same distance away from the speed trap for fairness in the speed recording across different cars.
 
-![ProjectPhoto1](./Photos/AdafruitFeed.png)
+![ProjectPhoto1](./Photos/Final1.jpg)
 
-![ProjectPhoto2](./Photos/AdafruitFeed.png)
+![ProjectPhoto2](./Photos/Final2.jpg)
 
 ![ProjectVideo](./Photos/AdafruitFeed.png)
 
