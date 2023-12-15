@@ -89,14 +89,69 @@ Due to the use of three adc sensors (the light sensors), I defined each one as a
   adc_sensor3 = ADC(Pin(6), atten=ADC.ATTN_11DB)
 ```
 
-Provide a link to your MicroPython code and explain a few important parts that make your prototype work.  Most likely you should explain the inputs/outputs used in your code and how they affect the behavior of the prototype.
-
-To include code snippets, you can use the code block markdown, like this:
+To connect to Adafruit IO, I included the code below to link specifically to my account.
 
 ``` Python  
-if(input_val > 1000):  # sensor value higher than threshold
-   led_pin.on()  # turn on LED
+  mqtt_client = MQTTClient(
+      'my_atom_board', 
+      'io.adafruit.com', 
+      port=1883, 
+      user=user_name, 
+      password='PASSWORD_HERE', 
+  )
+  mqtt_client.connect(clean_session=True)
 ```
+
+In order to control the servo unit and allow it to rotate at a slow speed under the classroom overhead light, I converted the light sensor output min and max values to a narrow range between 98 and 100. I then defined the output to sensor_val as the variable for the servo.move function.
+
+``` Python  
+  if(time.ticks_ms() > adc_timer + 2000):
+    # read 12-bit analog value (0 - 4095 range):
+    adc_sensor1_val = adc_sensor1.read()
+    # convert adc_val from 12-bit to 8-bit (0 - 255 range):
+    servo_val = map_value(adc_sensor1_val, in_min = 0, in_max = 4095,
+                           out_min = 98, out_max = 100)
+    servo.move(servo_val)
+    # update timer variable:
+    adc_timer = time.ticks_ms() 
+```
+
+Lastly in order to record the time between the two sequential light sensors for the speed trap, I defined a minimum sensor value of 1500 to trigger the light sensors to begin recording the current time. Whenever a toy car travels over the light sensor, the sensor value spikes over 1500 and begins the time using time.ticks_ms. Once the first sensor is triggered, the program state changes from 'Ready' to 'Sensor2' which signifies the system is now waiting to record the value from the last light sensor. Once both sensors have been triggered, the program state changes to 'Sensor3' and the duration for the toy car to travel between the two light sensors is calculated. The time is then used to divide 279.4 to give a speed reading in meters per second. Finally at the end the program state returns to 'Ready' to reset the loop back to the beginning for the next car.
+
+``` Python  
+  if(program_state == 'READY'):
+    # read sensor 2:
+    adc_sensor2_val = adc_sensor2.read()
+    if (adc_sensor2_val > 1500):
+      # save sensor2 time in milliseconds:
+      sensor2_time = time.ticks_ms()
+      print('sensor2_time', sensor2_time)
+      program_state = 'SENSOR2'
+      print('change program_state to', program_state)
+
+  elif(program_state == 'SENSOR2'):
+    # read sensor 3:
+    adc_sensor3_val = adc_sensor3.read()
+    if (adc_sensor3_val > 1500):
+      # save sensor3 time in milliseconds:
+      sensor3_time = time.ticks_ms()
+      # calculate time difference between sensor2 and sensor3 in milliseconds:
+      duration = sensor3_time - sensor2_time
+      print('duration =', duration)
+      program_state = 'SENSOR3'
+      print('change program_state to', program_state)
+      speed = ("{:.2f}".format(279.4/duration))
+      print('Captured speed =', speed, 'meters per second')
+      program_state = 'READY' 
+```
+
+In the end the recorded speed is published to Adafruit IO using the code below:
+
+``` Python  
+  mqtt_client.publish(user_name+'/feeds/toy-car-feed', str(speed), qos=0)
+  print('publish speed..', str(speed)) 
+```
+
 
 ## Software   
 
