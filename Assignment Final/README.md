@@ -2,7 +2,7 @@
 
 ## Hot Wheels Speed Trap
 
-View this repository on GitHub Pages: [https://itsengaccd.github.io/IXD-256-Isaac/Assignment%202/](https://itsengaccd.github.io/IXD-256-Isaac/Assignment/)
+View this repository on GitHub Pages: [https://itsengaccd.github.io/IXD-256-Isaac/Assignment%20Final/](https://itsengaccd.github.io/IXD-256-Isaac/Assignment%20Final/)
 
 # Introduction   
 
