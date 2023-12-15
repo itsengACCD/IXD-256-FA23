@@ -62,6 +62,8 @@ Section two of this device is the speed trap, composed of two sequential light s
 
 ### Here is the schematic diagram showing the wiring connections between the M5Stack AtomS3 board and the other components:
 
+With the three light sensors and one servo unit, all of the ports on the AtomS3 Lite with extension base were utilized fully. The three ADC ports that work with cloud function are pin 1, pin 6, and pin 8, therefore these three pins are connected to the light sensors. However, I found that pin 38/39 do not work over cloud for ADC sensors, so pin 38 is dedicated to the 360° servo unit.
+
 ![gears2](./Photos/gears2.jpg)
 
 ### Below are photos of the hardware wiring in the device:
@@ -159,6 +161,17 @@ software (HTML/CSS/JavaScript or other code)
 If applicable, explain the important software components of your project with relevant code snippets and links.  
 
 ## Integrations   
+
+The main cloud integration utilized is Adafruit IO. Below is the link to the Toy Car Feed to record outputs from the device:
+[Adafruit Toy Car Feed](https://io.adafruit.com/itAP12/feeds/toy-car-feed)
+
+![AdafruitFeed](./Photos/AdafruitFeed.png)
+
+The feed data is then displayed on the dashboard using a gauge display:
+[Adafruit Toy Car Speed Dashboard](https://io.adafruit.com/itAP12/dashboards/toy-car-speed)
+
+![AdafruitDashboard](./Photos/AdafruitDashboard.png)
+
 
 integrations (Adafruit IO, IFTTT, etc.)
 Include a link to and/or screenshots of other functional components of your project, like Adafruit IO feeds, dashboards, IFTTT applets, etc.  In general, think of your audience as someone new trying to learn how to make your project and make sure to cover anything helpful to explain the functional parts of it.
