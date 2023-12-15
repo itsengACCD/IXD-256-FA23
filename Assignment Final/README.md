@@ -14,45 +14,67 @@ Utilizing one light sensor to activate the turntable and two more light sensors 
 
 ## Implementation   
 
+
 ### Enclosure / Mechanical Design   
 
 The prototype began initially with reconstruction of my project 3 Rube Goldberg machine and new sketches. Based on the initial sketches, I took apart the Rube Goldberg machine made of lego technic parts and re-engineered the structure to mechanically support Hot Wheels orange track pieces.
+
 ![car1](./Photos/car1.jpg)
 
 The exterior enclosure is made from laser cut transparent 1/4" thick acrylic. On the largest piece, the Hot Wheels logo and "Speed Trap" are raster etched into the side for branding. 
+
 ![lasercut2](./Photos/lasercut2.png)
 ![enclosure1](./Photos/enclosure1.jpg)
 ![enclosure2](./Photos/enclosure2.jpg)
 ![enclosure3](./Photos/enclosure3.jpg)
 
 The turntable is also made from laser cut white 1/8" thick acrylic. The pieces are stacked to create just the right amount of height to house the toy car without it falling out of the turntable, but not too thick so that the material gets too heavy and difficult to turn.
+
 ![lasercut1](./Photos/lasercut1.png)
 ![turntable1](./Photos/turntable1.jpg)
 ![turntable2](./Photos/turntable2.jpg)
 
 To create the connection between the turntable and servo unit, I had to create a custom gear set using lego technic gears. The main challenge was to translate the rotational motion along a horizontal axis from the servo into an angled vertical axis for the turntable to line up to the track. I connected one large gear to the servo unit, and connected that to a row of four smaller gears to translate the horizontal-axis rotation to vertical-axis rotation. Lastly I connected the last in the row of four gears to a CV joint piece, and connected that to the turntable gear. The laser cut turntable was then affixed to the turntable gear using lego technic connector pieces.
+
 ![gears1](./Photos/gears1.jpg)
 ![gears2](./Photos/gears2.jpg)
 
+
 ### Hardware
 
+#### Components:
 * One M5Stack AtomS3 Lite Controller
 * One M5Stack ATOMIC PortABC Extension Base
 * One Brick-compatible 360° Servo Unit
 * Three Light Sensor Units with Photo-resistance
 
-The Rube Goldberg machine initially only had one light sensor and one servo unit, so I had to add on two additional light sensor units in order to create the speed sensor component of this project. I then changed the lego technic chassis to accomodate the two extra light sensors and cut out the backs of the orange tracks so that the light sensors could lie flush underneath the tracks seemlessly and perform properly to sense the toy cars passing over.
+The underlying Rube Goldberg machine initially only had one light sensor and one servo unit, so I had to add on two additional light sensor units in order to create the speed sensor component for this project. I then changed the lego technic chassis to accomodate the two extra light sensors and cut out the backs of the orange tracks so that the light sensors could lie flush underneath the tracks seemlessly and perform properly to sense the toy cars passing over.
+
+Section one of this device contains one light sensor unit and one servo unit. Covering the light sensor triggers the servo unit to begin turning slowly, so the presence of a waiting toy car covers the light sensor and the turntable turns until it lines up with the track and releases the toy car.
+
+Section two of this device is the speed trap, composed of two sequential light sensors embedded into the track. The speed is calculated by dividing the fixed distance between the two light sensors, by the time spent for the car to travel between the two light sensors. I therefore programmed in the firmware to record the time difference between the triggering of the first light sensor and the triggering of the second light sensor.
+
+#### Below are photos of how the light sensors are embedded into the track:
+
+![sensor1](./Photos/sensor1.jpg)
+![sensor2](./Photos/sensor2.jpg)
+![sensor3](./Photos/sensor3.jpg)
+
+#### Here is the schematic diagram showing the wiring connections between the M5Stack AtomS3 board and the other components:
+
+![gears2](./Photos/gears2.jpg)
+
+#### Below are photos of the hardware wiring in the device:
+
+![wire1](./Photos/wire1.jpg)
+![wire2](./Photos/wire2.jpg)
+![wire3](./Photos/wire3.jpg)
+![wire4](./Photos/wire4.jpg)
+
 
 After creating the overall mechanical components of the prototype, I moved onto writing the firmware for the prototype's functionality. Due to the use of three adc sensors (the light sensors), I defined each one as a variable by the order which the toy car passes over them. So the first light sensor that activates the turntable is adc_sensor1. For the speed trap component, the two light sensors are named adc_sensor2 and adc_sensor3 respectively.
 
-Explain your process of prototype development including all applicable aspects such as hardware (electronics), firmware (MicroPython code), software (HTML/CSS/JavaScript or other code), integrations (Adafruit IO, IFTTT, etc.), enclosure and mechanical design.  Use a separate subheader for each part:
-
-### Hardware
-
-List all the separate hardware components used in your project and briefly explain what they do.  To create a list with markdown syntax, use `-`, `*`, or `+` characters with each line of text:  
-* item 1  
-* item 2   
-* etc.  
+firmware (MicroPython code), software (HTML/CSS/JavaScript or other code), integrations (Adafruit IO, IFTTT, etc.)
 
 Include a schematic diagram image (hand-drawn is OK) showing all the wiring connections between the M5Stack AtomS3 board and other components.  
 
