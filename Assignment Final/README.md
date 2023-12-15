@@ -154,38 +154,43 @@ In the end the recorded speed is published to Adafruit IO using the code below:
   print('publish speed..', str(speed)) 
 ```
 
-
-## Software   
-
-software (HTML/CSS/JavaScript or other code)
-If applicable, explain the important software components of your project with relevant code snippets and links.  
-
 ## Integrations   
 
-The main cloud integration utilized is Adafruit IO. As mentioned in the Firmware section above, the recorded speed was sent to this feed using code. The output speed as well as the date and time that the speed are recorded onto the feed. Below is the link to and screenshot of the Toy Car Feed:
+The main cloud integration utilized is Adafruit IO. As mentioned in the Firmware section above, the recorded speed was sent to this feed using code. The output speed as well as the date and time that the speed are recorded onto the feed.
 
-[Adafruit Toy Car Feed](https://io.adafruit.com/itAP12/feeds/toy-car-feed)
+Here is the link to and screenshot of the Toy Car Feed: [Adafruit Toy Car Feed](https://io.adafruit.com/itAP12/feeds/toy-car-feed)
 
 ![AdafruitFeed](./Photos/AdafruitFeed.png)
 
-The feed data is then displayed on the dashboard using a gauge display. On Adafruit IO you can connect a feed to a dashbaord and use available charts, styles, graphs, and gauges to display your feed data. Below is the link to and screenshot of the dashboard:
+The feed data is then displayed on the dashboard using a gauge display. On Adafruit IO you can connect a feed to a dashbaord and use available charts, styles, graphs, and gauges to display your feed data. 
 
-[Adafruit Toy Car Speed Dashboard](https://io.adafruit.com/itAP12/dashboards/toy-car-speed)
+Here is the link to and screenshot of the dashboard: [Adafruit Toy Car Speed Dashboard](https://io.adafruit.com/itAP12/dashboards/toy-car-speed)
 
 ![AdafruitDashboard](./Photos/AdafruitDashboard.png)
 
 
-integrations (Adafruit IO, IFTTT, etc.)
-Include a link to and/or screenshots of other functional components of your project, like Adafruit IO feeds, dashboards, IFTTT applets, etc.  In general, think of your audience as someone new trying to learn how to make your project and make sure to cover anything helpful to explain the functional parts of it.
+# Project outcome  
 
-## Project outcome  
+For my final project implementation I was able to create a working prototype device that measures the speed of diecast Hot Wheels passing through the section of track. The recorded speed was able to be sent over the cloud and displayed on a separate screen to be viewed. The turntable also lines up and releases each car at the same distance away from the speed trap for fairness in the speed recording across different cars.
 
-Summarize the results of your final project implementation and include at least 2 photos of the prototype and a video walkthrough of the functioning demo.
+![ProjectPhoto1](./Photos/AdafruitFeed.png)
 
-## Conclusion  
+![ProjectPhoto2](./Photos/AdafruitFeed.png)
 
-As you wrap up the project, reflect on your experience of creating it.  Use this as an opportunity to mention any discoveries or challenges you came across along the way.  If there is anything you would have done differently, or have a chance to continue the project development given more time or resources, it’s a good way to conclude this section.
+![ProjectVideo](./Photos/AdafruitFeed.png)
+
+
+# Conclusion  
+
+Concluding this project, I was able to learn a lot about coding through MicroPython to create a fun interaction that I wanted. I was able to execute the project from sketch to physical prototype successfully and connect to the cloud for a visual display of the recorded speed reading. I've also always wanted to create a project around lego and toys which added an element of play and fun to the prototype.
+
+There were a few challenges and opportunities for improvement found during the process of this project. The first challenge was in production of the physical enclosure itself. Originally I was planning on laser cutting the entire enclosure including the track. However the resulting decision to use the orange Hot Wheels track actually made it simpler and easier to execute, and hand modify to fit the light sensors flush to the track surface. The second challenge was connecting to Adafruit IO with MQTT in the Firmware code. My device was able to record the time and speed of the toy cars successfully with the initial code while connected to Thonny, but I had trouble sending that data to my feed on Adafruit. After trouble shooting in class, we were then able to publish the analog value as a string to the feed and print that action on Thonny as a visual reassurance. The primary opportunity for improvement is in the integration of utilizing IFTTT as a broker to send data to a subscriber. I originally wanted to display the speed gauge on Webflow once IFTTT sent the data from my feed over to my created Webflow CMS list. However, there was quite a bit of difficulty getting Adafruit to communicate with Webflow, and the dashboard from Adafruit could not be placed inside my Webflow page using custom code due to a security prevention from Adafruit's site. The compromise was to directly display the Adafruit IO dashboard on my iPad, however my ultimate intention is to send the data over through IFTTT to display on my Webflow site.
+
+Overall this project helped me learn a lot about translating code into an interesting idea for physical prototyping. I learned how to infuse physical objects with code to create interactivity and meaning, while not being afraid to experiment around and take things apart before putting them back together to create something new. MicroPython was challenging to grasp at first, but I was able to use the experience from previous projects in this class to inform what I wanted to code for this final project.
+
 
 ## Project references  
 
-Please include links to any online resources like videos or tutorials that you may have found helpful in your process of implementing the prototype. If you used any substantial code from an online resource, make sure to credit the author(s) or sources.
+* MicroPython Time Functions Library: [reference link](https://docs.micropython.org/en/latest/library/time.html)
+* M5Stack UiFlow Blocks for MQTT Firmware Code writing: [link](https://uiflow2.m5stack.com/)
+
