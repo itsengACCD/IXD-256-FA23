@@ -8,9 +8,9 @@ Utilizing one light sensor to activate the turntable and two more light sensors 
 
 ## Design Sketches
 
-![sketch1](./sketch1.jpg)
-![sketch2](./sketch2.jpg)
-![sketch3](./sketch3.jpg)
+* ![sketch1](./sketch1.jpg)
+* ![sketch2](./sketch2.jpg)
+* ![sketch3](./sketch3.jpg)
 
 ## Implementation   
 
@@ -19,20 +19,20 @@ Utilizing one light sensor to activate the turntable and two more light sensors 
 The prototype began initially with reconstruction of my project 3 Rube Goldberg machine and new sketches. Based on the initial sketches, I took apart the Rube Goldberg machine made of lego technic parts and re-engineered the structure to mechanically support Hot Wheels orange track pieces.
 ![car1](./Photos/car1.jpg)
 
-* The exterior enclosure is made from laser cut transparent 1/4" thick acrylic. On the largest piece, the Hot Wheels logo and "Speed Trap" are raster etched into the side for branding. 
-![lasercut2](./Photos/lasercut2.png)
-![enclosure1](./Photos/enclosure1.jpg)
-![enclosure2](./Photos/enclosure2.jpg)
-![enclosure3](./Photos/enclosure3.jpg)
+The exterior enclosure is made from laser cut transparent 1/4" thick acrylic. On the largest piece, the Hot Wheels logo and "Speed Trap" are raster etched into the side for branding. 
+* ![lasercut2](./Photos/lasercut2.png)
+* ![enclosure1](./Photos/enclosure1.jpg)
+* ![enclosure2](./Photos/enclosure2.jpg)
+* ![enclosure3](./Photos/enclosure3.jpg)
 
-* The turntable is also made from laser cut white 1/8" thick acrylic. The pieces are stacked to create just the right amount of height to house the toy car without it falling out of the turntable, but not too thick so that the material gets too heavy and difficult to turn.
-![lasercut1](./Photos/lasercut1.png)
-![turntable1](./Photos/turntable1.jpg)
-![turntable2](./Photos/turntable2.jpg)
+The turntable is also made from laser cut white 1/8" thick acrylic. The pieces are stacked to create just the right amount of height to house the toy car without it falling out of the turntable, but not too thick so that the material gets too heavy and difficult to turn.
+* ![lasercut1](./Photos/lasercut1.png)
+* ![turntable1](./Photos/turntable1.jpg)
+* ![turntable2](./Photos/turntable2.jpg)
 
-* To create the connection between the turntable and servo unit, I had to create a custom gear set using lego technic gears. The main challenge was to translate the rotational motion along a horizontal axis from the servo into an angled vertical axis for the turntable to line up to the track. I connected one large gear to the servo unit, and connected that to a row of four smaller gears to translate the horizontal-axis rotation to vertical-axis rotation. Lastly I connected the last in the row of four gears to a CV joint piece, and connected that to the turntable gear. The laser cut turntable was then affixed to the turntable gear using lego technic connector pieces.
-![gears1](./Photos/gears1.jpg)
-![gears2](./Photos/gears2.jpg)
+To create the connection between the turntable and servo unit, I had to create a custom gear set using lego technic gears. The main challenge was to translate the rotational motion along a horizontal axis from the servo into an angled vertical axis for the turntable to line up to the track. I connected one large gear to the servo unit, and connected that to a row of four smaller gears to translate the horizontal-axis rotation to vertical-axis rotation. Lastly I connected the last in the row of four gears to a CV joint piece, and connected that to the turntable gear. The laser cut turntable was then affixed to the turntable gear using lego technic connector pieces.
+* ![gears1](./Photos/gears1.jpg)
+* ![gears2](./Photos/gears2.jpg)
 
 ### Hardware
 
