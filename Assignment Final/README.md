@@ -66,7 +66,7 @@ Section two of this device is the speed trap, composed of two sequential light s
 
 With the three light sensors and one servo unit, all of the ports on the AtomS3 Lite with extension base were utilized fully. The three ADC ports that work with cloud function are pin 1, pin 6, and pin 8, therefore these three pins are connected to the light sensors. However, I found that pin 38/39 do not work over cloud for ADC sensors, so pin 38 is dedicated to the 360° servo unit.
 
-![gears2](./Photos/gears2.jpg)
+![Wire_Schematic](./Photos/Wire_Schematic.jpg)
 
 ### Below are photos of the hardware wiring in the device:
 
