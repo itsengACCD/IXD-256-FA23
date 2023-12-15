@@ -20,9 +20,13 @@ Explain how you made the enclosure or any other physical or mechanical aspects o
 
 The prototype began initially with reconstruction of my project 3 Rube Goldberg machine and new sketches. Based on the initial sketches, I took apart the Rube Goldberg machine made of lego technic parts and re-engineered the structure to mechanically support Hot Wheels orange track pieces.
 
+* The exterior enclosure is made from acrylic using the laser cutter. On the largest piece, the Hot Wheels logo and "Speed Trap" are raster etched into the side for branding. 
+![lasercut2](./Photos/lasercut2.png)
+![enclosure1](./Photos/enclosure1.jpg)
+![enclosure2](./Photos/enclosure2.jpg)
+![enclosure3](./Photos/enclosure3.jpg)
 
-![enclosure1](./sketch1.jpg)
-
+* item 2 
 
 
 ### Hardware
