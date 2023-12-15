@@ -162,12 +162,14 @@ If applicable, explain the important software components of your project with re
 
 ## Integrations   
 
-The main cloud integration utilized is Adafruit IO. Below is the link to the Toy Car Feed to record outputs from the device:
+The main cloud integration utilized is Adafruit IO. As mentioned in the Firmware section above, the recorded speed was sent to this feed using code. The output speed as well as the date and time that the speed are recorded onto the feed. Below is the link to and screenshot of the Toy Car Feed:
+
 [Adafruit Toy Car Feed](https://io.adafruit.com/itAP12/feeds/toy-car-feed)
 
 ![AdafruitFeed](./Photos/AdafruitFeed.png)
 
-The feed data is then displayed on the dashboard using a gauge display:
+The feed data is then displayed on the dashboard using a gauge display. On Adafruit IO you can connect a feed to a dashbaord and use available charts, styles, graphs, and gauges to display your feed data. Below is the link to and screenshot of the dashboard:
+
 [Adafruit Toy Car Speed Dashboard](https://io.adafruit.com/itAP12/dashboards/toy-car-speed)
 
 ![AdafruitDashboard](./Photos/AdafruitDashboard.png)
