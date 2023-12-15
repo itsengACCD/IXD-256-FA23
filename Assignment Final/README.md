@@ -179,7 +179,7 @@ For my final project implementation I was able to create a working prototype dev
 
 ![ProjectPhoto2](./Photos/Final2.jpg)
 
-![ProjectVideo](./Photos/AdafruitFeed.png)
+![ProjectVideo](./Final_Video.mp4)
 
 
 # Conclusion  
