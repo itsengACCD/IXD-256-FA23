@@ -2,7 +2,7 @@
 
 Hot Wheels Speed Trap
 
-## Introduction   
+# Introduction   
 
 Utilizing one light sensor to activate the turntable and two more light sensors to calculate the traveling speed of the cars, the Hot Wheels Speed Trap is an interactive track piece to enhance the play experience of your Hot Wheels toy cars. The initial idea was built upon project 3's light sensor activated servo unit turntable and expanded into an interactive track for Hot Wheels. The final project concept follows true to the initial sketches from part 1, with a single lane track placed on a slope built upon a lego technic chassis and laser cut acrylic cladding on the outside of the device.  
 
@@ -12,10 +12,10 @@ Utilizing one light sensor to activate the turntable and two more light sensors 
 ![sketch2](./sketch2.jpg)
 ![sketch3](./sketch3.jpg)
 
-## Implementation   
+# Implementation   
 
 
-### Enclosure / Mechanical Design   
+## Enclosure / Mechanical Design   
 
 The prototype began initially with reconstruction of my project 3 Rube Goldberg machine and new sketches. Based on the initial sketches, I took apart the Rube Goldberg machine made of lego technic parts and re-engineered the structure to mechanically support Hot Wheels orange track pieces.
 
@@ -40,9 +40,9 @@ To create the connection between the turntable and servo unit, I had to create a
 ![gears2](./Photos/gears2.jpg)
 
 
-### Hardware
+## Hardware
 
-#### Components:
+### Components:
 * One M5Stack AtomS3 Lite Controller
 * One M5Stack ATOMIC PortABC Extension Base
 * One Brick-compatible 360° Servo Unit
@@ -54,17 +54,17 @@ Section one of this device contains one light sensor unit and one servo unit. Co
 
 Section two of this device is the speed trap, composed of two sequential light sensors embedded into the track. The speed is calculated by dividing the fixed distance between the two light sensors, by the time spent for the car to travel between the two light sensors. I therefore programmed in the firmware to record the time difference between the triggering of the first light sensor and the triggering of the second light sensor.
 
-#### Below are photos of how the light sensors are embedded into the track:
+### Below are photos of how the light sensors are embedded into the track:
 
 ![sensor1](./Photos/sensor1.jpg)
 ![sensor2](./Photos/sensor2.jpg)
 ![sensor3](./Photos/sensor3.jpg)
 
-#### Here is the schematic diagram showing the wiring connections between the M5Stack AtomS3 board and the other components:
+### Here is the schematic diagram showing the wiring connections between the M5Stack AtomS3 board and the other components:
 
 ![gears2](./Photos/gears2.jpg)
 
-#### Below are photos of the hardware wiring in the device:
+### Below are photos of the hardware wiring in the device:
 
 ![wire1](./Photos/wire1.jpg)
 ![wire2](./Photos/wire2.jpg)
@@ -72,15 +72,11 @@ Section two of this device is the speed trap, composed of two sequential light s
 ![wire4](./Photos/wire4.jpg)
 
 
+## Firmware   
+
 After creating the overall mechanical components of the prototype, I moved onto writing the firmware for the prototype's functionality. Due to the use of three adc sensors (the light sensors), I defined each one as a variable by the order which the toy car passes over them. So the first light sensor that activates the turntable is adc_sensor1. For the speed trap component, the two light sensors are named adc_sensor2 and adc_sensor3 respectively.
 
-firmware (MicroPython code), software (HTML/CSS/JavaScript or other code), integrations (Adafruit IO, IFTTT, etc.)
-
-Include a schematic diagram image (hand-drawn is OK) showing all the wiring connections between the M5Stack AtomS3 board and other components.  
-
-In addition, include at least one photo showing your hardware wiring.  This can be several close-ups with the goal of showing how the wiring connections are made.  
-
-### Firmware   
+[MicroPython Code](./main-code.py/)
 
 Provide a link to your MicroPython code and explain a few important parts that make your prototype work.  Most likely you should explain the inputs/outputs used in your code and how they affect the behavior of the prototype.
 
@@ -91,12 +87,14 @@ if(input_val > 1000):  # sensor value higher than threshold
    led_pin.on()  # turn on LED
 ```
 
-### Software   
+## Software   
 
+software (HTML/CSS/JavaScript or other code)
 If applicable, explain the important software components of your project with relevant code snippets and links.  
 
-### Integrations   
+## Integrations   
 
+integrations (Adafruit IO, IFTTT, etc.)
 Include a link to and/or screenshots of other functional components of your project, like Adafruit IO feeds, dashboards, IFTTT applets, etc.  In general, think of your audience as someone new trying to learn how to make your project and make sure to cover anything helpful to explain the functional parts of it.
 
 ## Project outcome  
