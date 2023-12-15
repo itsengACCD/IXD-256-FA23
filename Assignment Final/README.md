@@ -74,9 +74,20 @@ Section two of this device is the speed trap, composed of two sequential light s
 
 ## Firmware   
 
-After creating the overall mechanical components of the prototype, I moved onto writing the firmware for the prototype's functionality. Due to the use of three adc sensors (the light sensors), I defined each one as a variable by the order which the toy car passes over them. So the first light sensor that activates the turntable is adc_sensor1. For the speed trap component, the two light sensors are named adc_sensor2 and adc_sensor3 respectively.
+After creating the overall mechanical components of the prototype, I moved onto writing the firmware for the prototype's functionality.
 
 [MicroPython Code](./main-code.py/)
+
+Due to the use of three adc sensors (the light sensors), I defined each one as a variable by the order which the toy car passes over them. So the first light sensor that activates the turntable is adc_sensor1. For the speed trap component, the two light sensors are named adc_sensor2 and adc_sensor3 respectively.
+
+``` Python  
+  # configure ADC input on pin G1 with 11dB attenuation:
+  adc_sensor1 = ADC(Pin(1), atten=ADC.ATTN_11DB)
+  # configure ADC input on pin G8 with 11dB attenuation:
+  adc_sensor2 = ADC(Pin(8), atten=ADC.ATTN_11DB)
+  # configure ADC input on pin G6 with 11dB attenuation:
+  adc_sensor3 = ADC(Pin(6), atten=ADC.ATTN_11DB)
+```
 
 Provide a link to your MicroPython code and explain a few important parts that make your prototype work.  Most likely you should explain the inputs/outputs used in your code and how they affect the behavior of the prototype.
 
