@@ -17,7 +17,7 @@ adc_sensor3 = None
 adc_sensor3_val = None
 adc_timer = 0
 
-# configure servo on pin G7:
+# configure servo on pin G38:
 servo = Servo(pin=38)
 sensor2_time = 0
 sensor3_time = 0
